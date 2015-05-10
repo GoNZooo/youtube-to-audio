@@ -3,14 +3,15 @@
 (require gonz/gui-helpers
          "fetch.rkt")
 
-(define (url-field-callback element event)
-  
-  (when (or (event-equal? event 'text-field-enter)
-            (event-equal? event 'button))
-    (fetch-youtube-audio (send url-field get-value))))
 
 (define (main-window)
-  
+
+  (define (url-field-callback element event)
+
+    (when (or (event-equal? event 'text-field-enter)
+              (event-equal? event 'button))
+      (fetch-youtube-audio (send url-field get-value))))
+ 
   (define top-frame (new frame% [label "youtube-to-audio"]))
 
   (vpanel main-vpanel top-frame)
@@ -21,5 +22,5 @@
   (btn url-button top-frame
        "Fetch"
        url-field-callback)
-  
+
   (send top-frame show #t))
