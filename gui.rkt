@@ -17,7 +17,7 @@
   (tfield url-field main-vpanel
           "YouTube URL"
           url-field-callback
-          [minimum-width 300])
+          [min-width 300])
   (btn url-button top-frame
        "Fetch"
        url-field-callback)
