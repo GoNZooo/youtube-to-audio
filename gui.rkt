@@ -1,6 +1,7 @@
 #lang racket/gui
 
-(require gonz/gui-helpers)
+(require gonz/gui-helpers
+         "fetch.rkt")
 
 (define (url-field-callback element event)
   
