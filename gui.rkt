@@ -3,7 +3,6 @@
 (require gonz/gui-helpers
          "fetch.rkt")
 
-
 (define (main-window)
 
   (define (url-field-callback element event)
@@ -24,3 +23,6 @@
        url-field-callback)
 
   (send top-frame show #t))
+
+(module+ main
+  (main-window))
